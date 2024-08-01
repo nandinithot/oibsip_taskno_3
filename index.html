@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+     <body>
+        <div class="title">
+        <div class="heading">
+        <h1>
+            Temperature Converter
+        </h1>
+        </div>
+        <div class="body">
+        <input type="text" id="input">
+        <select id="temp">
+            <option value="0">Type:</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+         </select>
+         <div id="button"> <button class="but" onclick="convert()"> CLICK TO CONVERT</button> 
+            <div type="text" id="result"></div>
+        </div>
+        </div>
+        </div>
+     </body>
+     <script>
+            function convert()
+            {
+                const Type = document.getElementById("temp").value;
+                const data = parseFloat(document.getElementById("input").value);
+                let result = 0;
+            if (Type==="celsius") 
+            {
+                result = (data*9/5)+32;
+                document.getElementById("result").innerHTML =result.toFixed(2)+"°F";
+            } 
+            else if (Type==="fahrenheit") 
+            {
+                result=(data-32)*5/9;
+                document.getElementById("result").innerHTML =result.toFixed(2)+"°C";
+            }
+            }
+    </script>   
+    </head>
+</html>
